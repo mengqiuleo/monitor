@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端监控SDK</title>
+</head>
+<body>
+<!-- 这里写一些可以报错的代码，用来监控 -->
+<div id="container">
+  <div class="content">
+      <input id="errorBtn" type="button" value="点击抛出错误" onclick="btnClick()" />
+      <input id="promiseBtn" type="button" value="点击抛出promise错误" onclick="btnPromiseClick()" />
+  </div>
+</div>
+
+<script>
+  function btnClick() {
+    window.someVar.error = 'someVariable'; //这里会抛异常：某变量未定义
+  }
+  function btnPromiseClick() {
+    new Promise(function (resolve, reject) {
+      reject('err') //此时会报错：Uncaught (in promise) err (未捕获的异常)
+    }).then(res => { 
+      console.log(res)
+    });
+  }
+</script>
+<script src="/someError.js"></script>
+<!-- 监控资源加载异常 -->
+</body>
+</html>
