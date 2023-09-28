@@ -11,15 +11,16 @@ module.exports = {
   devServer: {
     // 在新版的webpack-dev-server中，contentBase已经被移除了，用static替代。
     //contentBase: path.resolve(__dirname, 'dist')
-    static: path.resolve(__dirname, 'dist'),
-    before(router){ //用来配置路由
-      router.get('/success', function(req, res){
-        res.json({ id: 1}) //200
-      })
-      router.post('/error', function(req, res){
-        res.sendStatus(500)
-      })
-    }
+    // static: path.resolve(__dirname, 'dist'),
+    allowedHosts: 'auto',
+    // before(router){ //用来配置路由
+    //   router.get('/success', function(req, res){
+    //     res.json({ id: 1}) //200
+    //   })
+    //   router.post('/error', function(req, res){
+    //     res.sendStatus(500)
+    //   })
+    // }
   },
   module: {},
   plugins: [
