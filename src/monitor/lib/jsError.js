@@ -1,3 +1,4 @@
+// *  本文件监听 js、promise、resource 异常
 import getLastEvent from '../utils/getLastEvent'
 import getSelector from '../utils/getSelector'
 import tracker from '../utils/tracker'
