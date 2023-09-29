@@ -1,3 +1,4 @@
+//* 监控白屏错误
 import tracker from '../utils/tracker'
 import onload from '../utils/onload';
 /**
